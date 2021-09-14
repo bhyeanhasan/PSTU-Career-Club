@@ -1,0 +1,38 @@
+.slider{
+    height: 90vh;
+    margin: auto;
+    width: 100%;
+}
+
+.navbar{
+    background-color: #0F3654;
+}
+
+.logo{
+    width: 50px;
+    border: white;
+    border-radius: 10px;
+}
+
+.navbar .navbar-collapse .navbar-brand{
+    color: white;
+}
+
+.navbar .navbar-collapse .navbar-nav .nav-item .nav-link{
+    color: white;
+    margin-right: 5px;
+    /*margin-bottom: 2px;*/
+    text-align: center;
+
+    /*border: white;*/
+    /*border-radius: 10px;*/
+    /*background-color: #4284B4;*/
+
+    /*width: 100px;*/
+}
+
+.navbar-nav .nav-item .nav-link:hover{
+    color: #4284B4;
+    /*background-color: white;*/
+
+}
