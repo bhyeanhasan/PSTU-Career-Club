@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,9 +13,8 @@
 
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
     <link rel="stylesheet" href="../Static/styles/css/style.css">
     <link rel="stylesheet" href="../Static/styles/css/login.css">
 </head>
@@ -55,16 +58,22 @@
             <div class="row">
 
                         <div  class="col-md-12 input-group form-group">
-                        <input class="form-control"  type="text" id="login"  name="email" placeholder="Email">
+                        <input class="form-control"  type="text" id="login"  name="user" placeholder="Email or ID" required>
                         </div>
 
                         <div class="col-md-12 input-group form-group">
-                            <input class="form-control" type="text" id="password"  name="password" placeholder="Password">
+                            <input class="form-control" type="password" id="password"  name="password" placeholder="Password" required>
                         </div>
 
                         <div class="col-md-12  form-group">
                             <input style="background-color:#4284B4" class="btn  login_btn"  type="submit"  value="Log In">
                         </div>
+
+
+
+
+
+
 
             </div>
         </div>
@@ -72,11 +81,26 @@
         </form>
 
         <div id="formFooter">
+
+            <?php
+            if(!empty($_SESSION['error'])){
+            ?>
+                <h5 style="color: red"><?php echo $_SESSION['error'] ?></h5>
+            <?php
+                unset($_SESSION['error']);
+            }
+            ?>
+
             <a class="underlineHover" href="#">Forgot Password?</a>
+
+
         </div>
 
     </div>
 </div>
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </body>
 </html>

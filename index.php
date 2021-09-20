@@ -1,3 +1,8 @@
+<?php
+session_start();
+?>
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -31,7 +36,7 @@
                 <a class="nav-link" href="#">Wings</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Members</a>
+                <a class="nav-link" href="Pages/members.php">Members</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Alumni</a>
@@ -39,13 +44,45 @@
         </ul>
 
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-            <li class="nav-item">
-                <a class="nav-link" href="Pages/register.html"><i class="fas fa-user-plus"></i> Sing Up</a>
-            </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="Pages/login.html"><i class="fas fa-sign-in-alt"></i> Log In</a>
-            </li>
+            <?php
+                if(isset($_SESSION['id']))
+                {
+            ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-user-plus"></i>
+                            <?php
+                                echo $_SESSION['user'];
+                            ?>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="Auth/logout.php"><i class="fas fa-sign-in-alt"></i> Log Out</a>
+                    </li>
+
+            <?php
+                }
+                else
+                {
+            ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Pages/register.html"><i class="fas fa-user-plus"></i> Sing Up</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="Pages/login_page.php"><i class="fas fa-sign-in-alt"></i> Log In</a>
+                    </li>
+            <?php
+                }
+            ?>
+
+
+
+
+
+
+
         </ul>
 
     </div>
@@ -60,12 +97,15 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
-        <div class="carousel-item active ">
-            <img  class="d-block slider" src="Static/picture/1.png" alt="First slide">
 
+        <div class="carousel-item active">
+            <img class="d-block slider" src="Static/picture/pstu.jpg" alt="Second slide" >
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item ">
             <img class="d-block slider" src="Static/picture/2.jpg" alt="Second slide" >
+        </div>
+        <div class="carousel-item  ">
+            <img  class="d-block slider" src="Static/picture/1.png" alt="First slide">
 
         </div>
         <div class="carousel-item">
@@ -84,7 +124,7 @@
 </div>
 
 
-<img width="100%" src="Static/picture/2.jpg">
+<img width="100%" src="Static/picture/1.png">
 <!--end slider-->
 
 <script src="Static/styles/js/main.js"></script>
