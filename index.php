@@ -24,10 +24,10 @@ session_start();
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 
 
-        <a class="navbar-brand" href="/"> <img class="logo" src='Static/picture/logo.jpg' alt=""> PSTU CC</a>
+        <a class="navbar-brand" href="index.php"> <img class="logo" src='Static/picture/logo.jpg' alt=""> PSTU CC</a>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Events</a>

@@ -24,20 +24,66 @@ include '../Database_Operations/all_members.php';
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 
 
-        <a class="navbar-brand" href="/"> <img class="logo" src='../Static/picture/logo.jpg' alt=""> PSTU CC</a>
+        <a class="navbar-brand" href="../index.php"> <img class="logo" src='Static/picture/logo.jpg' alt=""> PSTU CC</a>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="../index.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="#">Events</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Disabled</a>
+                <a class="nav-link" href="#">Wings</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Pages/members.php">Members</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Alumni</a>
             </li>
         </ul>
 
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
 
+            <?php
+            if(isset($_SESSION['id']))
+            {
+                ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-user-plus"></i>
+                        <?php
+                        echo $_SESSION['user'];
+                        ?>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="Auth/logout.php"><i class="fas fa-sign-in-alt"></i> Log Out</a>
+                </li>
+
+                <?php
+            }
+            else
+            {
+                ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="Pages/register.html"><i class="fas fa-user-plus"></i> Sing Up</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="Pages/login_page.php"><i class="fas fa-sign-in-alt"></i> Log In</a>
+                </li>
+                <?php
+            }
+            ?>
+
+
+
+
+
+
+
+        </ul>
 
     </div>
 </nav>
