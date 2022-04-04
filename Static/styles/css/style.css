@@ -1,3 +1,5 @@
+
+
 .slider{
     height: 90vh;
     margin: auto;
@@ -6,6 +8,12 @@
 
 .navbar{
     background-color: #0F3654;
+}
+.footer{
+    background-color: #0F3654;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .logo{
@@ -35,4 +43,9 @@
     color: #4284B4;
     /*background-color: white;*/
 
+}
+
+.profile-box {
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
